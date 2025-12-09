@@ -3,7 +3,7 @@
  * Plugin Name: Tomatillo Design Style Salvage 2025
  * Plugin URI: https://tomatillodesign.com
  * Description: Restores and replaces lost stylesheets that broke in WordPress 6.9. Attempts to re-enqueue original stylesheets with fallback to replacement CSS.
- * Version: 1.0.3
+ * Version: 1.0.4
  * Author: Tomatillo Design
  * Author URI: https://tomatillodesign.com
  * License: GPL v2 or later
@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Define plugin constants
-define( 'TDSS_VERSION', '1.0.3' );
+define( 'TDSS_VERSION', '1.0.4' );
 define( 'TDSS_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'TDSS_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
@@ -34,6 +34,31 @@ $tdss_update_checker = PucFactory::buildUpdateChecker(
 	$tdss_plugin_slug
 );
 $tdss_update_checker->setBranch( 'main' );
+
+// Ensure downloaded updates maintain the current folder name to prevent deactivation
+add_filter( 'upgrader_source_selection', 'tdss_fix_plugin_folder_name', 10, 4 );
+function tdss_fix_plugin_folder_name( $source, $remote_source, $upgrader, $extra ) {
+	global $wp_filesystem;
+	
+	// Only process our plugin
+	if ( ! isset( $extra['plugin'] ) || ! str_contains( $extra['plugin'], 'style-salvage.php' ) ) {
+		return $source;
+	}
+	
+	// Get the current installed folder name
+	$plugin_slug = basename( dirname( $extra['plugin'] ) );
+	
+	// If the downloaded folder name doesn't match, rename it
+	$new_source = trailingslashit( dirname( $source ) ) . $plugin_slug . '/';
+	
+	if ( $source !== $new_source ) {
+		// Rename the folder to match the current installation
+		$wp_filesystem->move( $source, $new_source );
+		return $new_source;
+	}
+	
+	return $source;
+}
 
 /**
  * Configuration array for stylesheets to restore

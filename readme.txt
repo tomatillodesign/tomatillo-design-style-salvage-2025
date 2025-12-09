@@ -3,7 +3,7 @@ Contributors: tomatillodesign
 Tags: styles, css, stylesheet, restore, fix, wordpress-6.9, compatibility
 Requires at least: 5.0
 Tested up to: 6.9
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -69,6 +69,12 @@ Edit the `tdss_get_stylesheets_to_restore()` function in `style-salvage.php` and
 1. Plugin configuration example showing how to add stylesheets to restore.
 
 == Changelog ==
+
+= 1.0.4 =
+* Added folder name preservation during updates
+* Prevents plugin deactivation when updating from any folder name
+* Ensures downloaded updates maintain current folder structure
+* Critical fix for maintaining plugin activation after updates
 
 = 1.0.3 =
 * Auto-detects plugin folder name for seamless updates

@@ -87,6 +87,12 @@ Edit the `tdss_get_stylesheets_to_restore()` function in `style-salvage.php` and
 
 ## Changelog
 
+### 1.0.4
+- Added folder name preservation during updates
+- Prevents plugin deactivation when updating from any folder name
+- Ensures downloaded updates maintain current folder structure
+- Critical fix for maintaining plugin activation after updates
+
 ### 1.0.3
 - Auto-detects plugin folder name for seamless updates
 - Now works perfectly regardless of folder name (with or without -main suffix)
