@@ -3,7 +3,7 @@ Contributors: tomatillodesign
 Tags: styles, css, stylesheet, restore, fix, wordpress-6.9, compatibility
 Requires at least: 5.0
 Tested up to: 6.9
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -61,6 +61,13 @@ Edit the `tdss_get_stylesheets_to_restore()` function in `style-salvage.php` and
 
 == Changelog ==
 
+= 1.0.1 =
+* Added GitHub auto-update functionality
+* Plugin now updates automatically from GitHub repository
+* Integrated Plugin Update Checker library
+* Added .gitignore for better repository management
+* Updated documentation with auto-update feature
+
 = 1.0.0 =
 * Initial release
 * Restore missing stylesheets functionality
@@ -69,6 +76,9 @@ Edit the `tdss_get_stylesheets_to_restore()` function in `style-salvage.php` and
 * Includes clb-icon-cards plugin styles
 
 == Upgrade Notice ==
+
+= 1.0.1 =
+Added GitHub auto-update functionality. Plugin now checks for updates automatically from the GitHub repository.
 
 = 1.0.0 =
 Initial release of the plugin.

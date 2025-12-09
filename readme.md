@@ -75,6 +75,13 @@ Edit the `tdss_get_stylesheets_to_restore()` function in `style-salvage.php` and
 
 ## Changelog
 
+### 1.0.1
+- Added GitHub auto-update functionality
+- Plugin now updates automatically from GitHub repository
+- Integrated Plugin Update Checker library
+- Added .gitignore for better repository management
+- Updated documentation with auto-update feature
+
 ### 1.0.0
 - Initial release
 - Restore missing stylesheets functionality
