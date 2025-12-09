@@ -685,7 +685,7 @@ a.collapse-section {
 }
 
 .wp-block-cgb-icon-card-grid {
-    padding: 30px;
+    padding: 0;
     text-align: left;
     background: transparent;
 }
