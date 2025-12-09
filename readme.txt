@@ -20,6 +20,7 @@ WordPress 6.9 introduced changes that broke compatibility with some older plugin
 * Provides fallback replacement CSS for styles that fail to load
 * Works on both frontend and block editor (Gutenberg)
 * Easy configuration through a simple array in the plugin file
+* Automatic updates from GitHub - get updates directly through WordPress admin
 * Lightweight and performant
 
 **Use Cases:**

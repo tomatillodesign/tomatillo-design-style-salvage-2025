@@ -21,6 +21,17 @@ define( 'TDSS_VERSION', '1.0.0' );
 define( 'TDSS_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'TDSS_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
+// Initialize GitHub updates
+require_once TDSS_PLUGIN_DIR . 'lib/plugin-update-checker/plugin-update-checker.php';
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
+$tdss_update_checker = PucFactory::buildUpdateChecker(
+	'https://github.com/tomatillodesign/tomatillo-design-style-salvage-2025',
+	__FILE__,
+	'tomatillo-style-salvage'
+);
+$tdss_update_checker->setBranch( 'main' );
+
 /**
  * Configuration array for stylesheets to restore
  * 
