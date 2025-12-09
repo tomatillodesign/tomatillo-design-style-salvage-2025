@@ -87,6 +87,9 @@ Edit the `tdss_get_stylesheets_to_restore()` function in `style-salvage.php` and
 
 ## Changelog
 
+### 1.0.5
+- Test release to verify auto-update functionality
+
 ### 1.0.4
 - Added folder name preservation during updates
 - Prevents plugin deactivation when updating from any folder name

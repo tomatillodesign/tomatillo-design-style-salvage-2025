@@ -3,7 +3,7 @@
  * Plugin Name: Tomatillo Design Style Salvage 2025
  * Plugin URI: https://tomatillodesign.com
  * Description: Restores and replaces lost stylesheets that broke in WordPress 6.9. Attempts to re-enqueue original stylesheets with fallback to replacement CSS.
- * Version: 1.0.4
+ * Version: 1.0.5
  * Author: Tomatillo Design
  * Author URI: https://tomatillodesign.com
  * License: GPL v2 or later
@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Define plugin constants
-define( 'TDSS_VERSION', '1.0.4' );
+define( 'TDSS_VERSION', '1.0.5' );
 define( 'TDSS_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'TDSS_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
