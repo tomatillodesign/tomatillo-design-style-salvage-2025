@@ -24,14 +24,13 @@ WordPress 6.9 introduced changes that broke compatibility with some older plugin
 
 ## Installation
 
-⚠️ **Important:** To ensure auto-updates work correctly, make sure the plugin folder is named `tomatillo-design-style-salvage-2025` (without `-main` or other suffixes).
+✅ **Works with any folder name** - No need to rename! The plugin auto-detects its folder name and handles updates automatically.
 
 ### Method 1: Download from GitHub
 
 1. Download the latest release from GitHub
-2. Extract and rename the folder to `tomatillo-design-style-salvage-2025` if needed (remove `-main` suffix)
-3. Upload to `/wp-content/plugins/tomatillo-design-style-salvage-2025`
-4. Activate the plugin through the 'Plugins' screen in WordPress
+2. Extract to `/wp-content/plugins/` (works with or without `-main` suffix)
+3. Activate the plugin through the 'Plugins' screen in WordPress
 
 ### Method 2: Git Clone
 
@@ -87,6 +86,12 @@ Yes, the plugin automatically loads styles in both the frontend and the block ed
 Edit the `tdss_get_stylesheets_to_restore()` function in `style-salvage.php` and add your stylesheet configuration to the array.
 
 ## Changelog
+
+### 1.0.3
+- Auto-detects plugin folder name for seamless updates
+- Now works perfectly regardless of folder name (with or without -main suffix)
+- Simplified update logic - no manual configuration needed
+- Improved compatibility with different installation methods
 
 ### 1.0.2
 - Fixed plugin slug to match repository name for proper updates

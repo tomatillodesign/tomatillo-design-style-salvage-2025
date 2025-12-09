@@ -3,7 +3,7 @@
  * Plugin Name: Tomatillo Design Style Salvage 2025
  * Plugin URI: https://tomatillodesign.com
  * Description: Restores and replaces lost stylesheets that broke in WordPress 6.9. Attempts to re-enqueue original stylesheets with fallback to replacement CSS.
- * Version: 1.0.2
+ * Version: 1.0.3
  * Author: Tomatillo Design
  * Author URI: https://tomatillodesign.com
  * License: GPL v2 or later
@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Define plugin constants
-define( 'TDSS_VERSION', '1.0.2' );
+define( 'TDSS_VERSION', '1.0.3' );
 define( 'TDSS_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'TDSS_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
@@ -25,19 +25,15 @@ define( 'TDSS_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 require_once TDSS_PLUGIN_DIR . 'lib/plugin-update-checker/plugin-update-checker.php';
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 
+// Automatically detect the actual folder name this plugin is installed in
+$tdss_plugin_slug = basename( dirname( __FILE__ ) );
+
 $tdss_update_checker = PucFactory::buildUpdateChecker(
 	'https://github.com/tomatillodesign/tomatillo-design-style-salvage-2025',
 	__FILE__,
-	'tomatillo-design-style-salvage-2025'
+	$tdss_plugin_slug
 );
 $tdss_update_checker->setBranch( 'main' );
-
-// Handle GitHub's folder naming convention (removes -main, -master, etc.)
-$tdss_update_checker->addResultFilter( function( $plugin_info, $http_response = null ) {
-	// Ensure the slug matches the actual folder name, removing any branch suffix
-	$plugin_info->slug = preg_replace( '/-(?:main|master|develop)$/i', '', $plugin_info->slug );
-	return $plugin_info;
-} );
 
 /**
  * Configuration array for stylesheets to restore
