@@ -700,9 +700,9 @@ a.collapse-section {
 }
 
 .wp-block-cgb-button-grid {
-    padding: 30px;
+    /* padding: 30px;
     text-align: left;
-    background: #eee;
+    background: #eee; */
 }
 
 /* Interactive cardset – editor placeholder */
@@ -722,9 +722,9 @@ img.card-static-image {
 }
 
 .wp-block-cgb-interactive-cardset {
-    padding: 30px;
+    /* padding: 30px;
     text-align: left;
-    background: #eee;
+    background: #eee; */
 }
 
 /* Modal – editor placeholder */
