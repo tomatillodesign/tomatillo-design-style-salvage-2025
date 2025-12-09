@@ -24,10 +24,23 @@ WordPress 6.9 introduced changes that broke compatibility with some older plugin
 
 ## Installation
 
-1. Upload the plugin files to the `/wp-content/plugins/tomatillo-style-salvage` directory, or install the plugin through the WordPress plugins screen directly.
-2. Activate the plugin through the 'Plugins' screen in WordPress.
-3. Configure the stylesheets you want to restore by editing the `tdss_get_stylesheets_to_restore()` function in `style-salvage.php`.
-4. Add any replacement CSS to `assets/css/style-salvage.css`.
+⚠️ **Important:** To ensure auto-updates work correctly, make sure the plugin folder is named `tomatillo-design-style-salvage-2025` (without `-main` or other suffixes).
+
+### Method 1: Download from GitHub
+
+1. Download the latest release from GitHub
+2. Extract and rename the folder to `tomatillo-design-style-salvage-2025` if needed (remove `-main` suffix)
+3. Upload to `/wp-content/plugins/tomatillo-design-style-salvage-2025`
+4. Activate the plugin through the 'Plugins' screen in WordPress
+
+### Method 2: Git Clone
+
+```bash
+cd /path/to/wordpress/wp-content/plugins/
+git clone https://github.com/tomatillodesign/tomatillo-design-style-salvage-2025.git
+```
+
+Then activate through WordPress admin.
 
 ## Configuration
 
@@ -74,6 +87,12 @@ Yes, the plugin automatically loads styles in both the frontend and the block ed
 Edit the `tdss_get_stylesheets_to_restore()` function in `style-salvage.php` and add your stylesheet configuration to the array.
 
 ## Changelog
+
+### 1.0.2
+- Fixed plugin slug to match repository name for proper updates
+- Added filter to handle GitHub folder naming (-main suffix)
+- Improved installation instructions in documentation
+- Better handling of folder name mismatches during updates
 
 ### 1.0.1
 - Added GitHub auto-update functionality

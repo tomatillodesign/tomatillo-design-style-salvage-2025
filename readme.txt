@@ -3,7 +3,7 @@ Contributors: tomatillodesign
 Tags: styles, css, stylesheet, restore, fix, wordpress-6.9, compatibility
 Requires at least: 5.0
 Tested up to: 6.9
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -32,10 +32,22 @@ WordPress 6.9 introduced changes that broke compatibility with some older plugin
 
 == Installation ==
 
-1. Upload the plugin files to the `/wp-content/plugins/tomatillo-style-salvage` directory, or install the plugin through the WordPress plugins screen directly.
-2. Activate the plugin through the 'Plugins' screen in WordPress.
-3. Configure the stylesheets you want to restore by editing the `tdss_get_stylesheets_to_restore()` function in `style-salvage.php`.
-4. Add any replacement CSS to `assets/css/style-salvage.css`.
+**Important:** To ensure auto-updates work correctly, make sure the plugin folder is named `tomatillo-design-style-salvage-2025` (without `-main` or other suffixes).
+
+**Method 1: Download from GitHub**
+1. Download the latest release from GitHub
+2. Extract and rename the folder to `tomatillo-design-style-salvage-2025` if needed
+3. Upload to `/wp-content/plugins/tomatillo-design-style-salvage-2025`
+4. Activate the plugin through the 'Plugins' screen in WordPress
+
+**Method 2: Direct Installation**
+1. Clone or download the repository
+2. Place it in `/wp-content/plugins/tomatillo-design-style-salvage-2025`
+3. Activate the plugin through the 'Plugins' screen in WordPress
+
+**Configuration:**
+1. Configure the stylesheets you want to restore by editing the `tdss_get_stylesheets_to_restore()` function in `style-salvage.php`.
+2. Add any replacement CSS to `assets/css/style-salvage.css`.
 
 == Frequently Asked Questions ==
 
@@ -61,6 +73,12 @@ Edit the `tdss_get_stylesheets_to_restore()` function in `style-salvage.php` and
 
 == Changelog ==
 
+= 1.0.2 =
+* Fixed plugin slug to match repository name for proper updates
+* Added filter to handle GitHub folder naming (-main suffix)
+* Improved installation instructions in documentation
+* Better handling of folder name mismatches during updates
+
 = 1.0.1 =
 * Added GitHub auto-update functionality
 * Plugin now updates automatically from GitHub repository
@@ -76,6 +94,9 @@ Edit the `tdss_get_stylesheets_to_restore()` function in `style-salvage.php` and
 * Includes clb-icon-cards plugin styles
 
 == Upgrade Notice ==
+
+= 1.0.2 =
+Important fix for auto-update functionality. Ensures proper folder naming for consistent updates.
 
 = 1.0.1 =
 Added GitHub auto-update functionality. Plugin now checks for updates automatically from the GitHub repository.
