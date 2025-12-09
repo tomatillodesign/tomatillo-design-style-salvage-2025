@@ -62,3 +62,735 @@
     transform: translate3d(0,-6px,0);
 }
 
+
+
+
+/*
+ * Custom Gutenberg Blocks – Combined CSS
+ * Source equivalents:
+ *   - dist/blocks.style.build.css  (frontend)
+ *   - dist/blocks.editor.build.css (editor)
+ *
+ * Safe to enqueue from another plugin/theme.
+ */
+
+/* =========================================
+   ICON CARD GRID
+   ========================================= */
+
+   .clb-icon-card-area {
+    text-align: center;
+    padding: 20px;
+    padding-top: 40px;
+    margin-bottom: 20px;
+    -webkit-transition: all ease-in-out 0.35s;
+    -o-transition: all ease-in-out 0.35s;
+    transition: all ease-in-out 0.35s;
+    border-radius: 5px;
+}
+
+.clb-icon-card-area.foreground-text-light,
+.clb-icon-card-area.foreground-text-light a {
+    color: #fff;
+}
+
+.clb-icon-card-area.foreground-text-dark,
+.clb-icon-card-area.foreground-text-dark a {
+    color: #222;
+}
+
+.clb-icon-card-area a {
+    text-decoration: none;
+}
+
+.clb_card__title {
+    margin-top: 20px;
+}
+
+.clb-icon-card-area:hover {
+    -webkit-transform: translate3d(0, -6px, 0);
+    transform: translate3d(0, -6px, 0);
+}
+
+.icon-card-grid {
+    display: grid;
+    -webkit-column-gap: 20px;
+    -moz-column-gap: 20px;
+    column-gap: 20px;
+    grid-row-gap: 20px;
+    grid-template-columns: 1fr;
+}
+
+@media only screen and (min-width: 769px) {
+    .icon-card-grid.columns-2 {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .icon-card-grid.columns-3 {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .icon-card-grid.columns-4 {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (min-width: 1160px) {
+    .icon-card-grid.columns-4 {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+/* =========================================
+   BUTTON GRID
+   ========================================= */
+
+.button.full.clb-button {
+    width: 100%;
+    text-align: center;
+    height: 100%;
+}
+
+.button-grid {
+    display: grid;
+    -webkit-column-gap: 20px;
+    -moz-column-gap: 20px;
+    column-gap: 20px;
+    grid-row-gap: 20px;
+    grid-template-columns: 1fr;
+}
+
+@media only screen and (min-width: 769px) {
+    .button-grid.columns-2 {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .button-grid.columns-3 {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .button-grid.columns-4 {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (min-width: 1160px) {
+    .button-grid.columns-4 {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+/* =========================================
+   INTERACTIVE CARDSET + FLIP CARDS
+   ========================================= */
+
+.interactive-card {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Basic card */
+
+.interactive-card.card-basic {
+    -webkit-box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    -webkit-transition: all ease-in-out 0.3s;
+    -o-transition: all ease-in-out 0.3s;
+    transition: all ease-in-out 0.3s;
+}
+
+.interactive-card.card-basic h4.clb-card__title {
+    margin-top: 20px;
+    padding-bottom: 14px;
+}
+
+.interactive-card.card-basic:hover {
+    -webkit-transform: translate3d(0, -4px, 0);
+    transform: translate3d(0, -4px, 0);
+}
+
+/* Flip card */
+
+.interactive-card.card-flip {
+    width: 100%;
+    height: 300px;
+}
+
+.card-flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    -webkit-transition: -webkit-transform 0.8s;
+    transition: -webkit-transform 0.8s;
+    -o-transition: transform 0.8s;
+    transition: transform 0.8s;
+    transition: transform 0.8s, -webkit-transform 0.8s;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.interactive-card.card-flip:hover .card-flip-inner,
+.person-card.card-flip:hover .card-flip-inner {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    background-color: #eee;
+    color: black;
+    width: 100%;
+}
+
+.flip-card-back {
+    background-color: #eee;
+    color: #000;
+    padding: 16px;
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.interactive-card.card-flip .clb-card__body {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.interactive-card.card-flip .card-flip-inner .flip-card-front h4 {
+    color: #fff;
+    font-weight: 700;
+    line-height: 1.2;
+    font-size: 2.8rem;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    text-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+}
+
+.flip-card-back h4 {
+    margin-top: 20px;
+    font-size: 20px;
+    font-size: 2rem;
+}
+
+/* Grid/layout */
+
+.interactive-cardset {
+    display: grid;
+    -webkit-column-gap: 20px;
+    -moz-column-gap: 20px;
+    column-gap: 20px;
+    grid-row-gap: 20px;
+    grid-template-columns: 1fr;
+}
+
+@media only screen and (min-width: 769px) {
+    .interactive-cardset.columns-2 {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .interactive-cardset.columns-3 {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .interactive-cardset.columns-4 {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (min-width: 1160px) {
+    .interactive-cardset.columns-4 {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+/* =========================================
+   PEOPLE CARDS / PEOPLE FLIP
+   ========================================= */
+
+.person-card {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Basic */
+
+.person-card.card-basic {
+    -webkit-box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    -webkit-transition: all ease-in-out 0.3s;
+    -o-transition: all ease-in-out 0.3s;
+    transition: all ease-in-out 0.3s;
+}
+
+.person-card.card-basic h4.clb-card__title {
+    margin-top: 20px;
+    padding-bottom: 14px;
+}
+
+.person-card.card-basic:hover {
+    -webkit-transform: translate3d(0, -4px, 0);
+    transform: translate3d(0, -4px, 0);
+}
+
+/* Flip */
+
+.person-card.card-flip {
+    width: 100%;
+    height: 300px;
+}
+
+.people-cards .flip-card-front {
+    background-color: #eee;
+    color: black;
+    width: 100%;
+}
+
+.people-cards .flip-card-back {
+    background-color: #eee;
+    color: #000;
+    padding: 16px;
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.people-cards .person-card.card-flip .clb-card__body {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.card-flip:hover .flip-card-front .clb-person__info-area {
+    opacity: 0;
+}
+
+.clb-person__info-area {
+    color: #fff;
+    font-weight: 700;
+    line-height: 1.2;
+    font-size: 2.8rem;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    text-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+}
+
+.people-cards .person-card.card-flip .card-flip-inner .flip-card-front h4 {
+    color: #fff;
+    font-weight: 700;
+    line-height: 1.2;
+    font-size: 2.8rem;
+    text-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+}
+
+.clb-person__title {
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+/* Grid */
+
+.people-cards {
+    display: grid;
+    -webkit-column-gap: 20px;
+    -moz-column-gap: 20px;
+    column-gap: 20px;
+    grid-row-gap: 20px;
+    grid-template-columns: 1fr;
+}
+
+@media only screen and (min-width: 769px) {
+    .people-cards.columns-2 {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .people-cards.columns-3 {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .people-cards.columns-4 {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (min-width: 1160px) {
+    .people-cards.columns-4 {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+/* =========================================
+   MODAL + MODAL CARDSET
+   ========================================= */
+
+@media only screen and (min-width: 800px) {
+    .modal-dialog {
+        margin-top: 136px !important;
+    }
+}
+
+.modal-body ul {
+    margin-bottom: 30px;
+    margin-left: 40px;
+}
+
+.modal-body li {
+    list-style-type: disc;
+}
+
+.modal-cardset {
+    display: grid;
+    -webkit-column-gap: 20px;
+    -moz-column-gap: 20px;
+    column-gap: 20px;
+    grid-row-gap: 20px;
+    grid-template-columns: 1fr;
+}
+
+@media only screen and (min-width: 769px) {
+    .modal-cardset.columns-2 {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .modal-cardset.columns-3 {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .modal-cardset.columns-4 {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (min-width: 1160px) {
+    .modal-cardset.columns-4 {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+.clb-modal-card-area {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.clb-modal-card-area a:hover {
+    text-decoration: none;
+}
+
+.clb-modal-card-area {
+    -webkit-box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    -webkit-transition: all ease-in-out 0.3s;
+    -o-transition: all ease-in-out 0.3s;
+    transition: all ease-in-out 0.3s;
+}
+
+.clb-modal-card-area h4.modal-card-title-input {
+    margin-top: 20px;
+    padding-bottom: 14px;
+}
+
+.clb-modal-card-area:hover {
+    -webkit-transform: translate3d(0, -4px, 0);
+    transform: translate3d(0, -4px, 0);
+}
+
+/* =========================================
+   BOOTSTRAP COLLAPSE (MINIMAL)
+   ========================================= */
+
+/*! Bootstrap v4.0.0 – minimal collapse/fade subset */
+
+.fade {
+    opacity: 0;
+    -webkit-transition: opacity 0.15s linear;
+    -o-transition: opacity 0.15s linear;
+    transition: opacity 0.15s linear;
+}
+
+.fade.show {
+    opacity: 1;
+}
+
+.collapse {
+    display: none;
+}
+
+.collapse.show {
+    display: block;
+}
+
+tr.collapse.show {
+    display: table-row;
+}
+
+tbody.collapse.show {
+    display: table-row-group;
+}
+
+.collapsing {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    -webkit-transition: height 0.35s ease;
+    -o-transition: height 0.35s ease;
+    transition: height 0.35s ease;
+}
+
+/* Button row and body */
+
+.collapse-button-area {
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-top: none;
+}
+
+a.collapse-section {
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.collapse,
+.collapsing {
+    text-align: left;
+    border: none;
+    border-top: none;
+    background: #eee;
+    padding: 0;
+    color: #333;
+}
+
+.clb-collapse-area {
+    margin-bottom: 20px;
+}
+
+.collapse-text {
+    padding: 20px;
+}
+
+.collapse-text p:last-of-type {
+    margin-bottom: 0;
+}
+
+.collapse-icon {
+    float: left;
+    margin-right: 8px;
+    margin-top: -11px;
+}
+
+.collapse-button-area.foreground-text-light,
+.collapse-button-area.foreground-text-light a {
+    color: #fff;
+}
+
+.collapse-button-area.foreground-text-dark,
+.collapse-button-area.foreground-text-dark a {
+    color: #222;
+}
+
+/* =========================================
+   CALLOUTS
+   ========================================= */
+
+.clb-callout-area {
+    padding: 26px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.clb-callout-area .callout-body {
+    text-align: left;
+}
+
+.clb-callout-area .callout-icon {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.clb-callout-area h3 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.clb-callout-area p:last-of-type {
+    margin-bottom: 0;
+}
+
+.clb-callout-area.right {
+    width: 40%;
+    float: right;
+    margin-left: 20px;
+}
+
+.clb-callout-area.left {
+    width: 40%;
+    float: left;
+    margin-right: 20px;
+}
+
+.clb-callout-area.full {
+    margin-bottom: 26px;
+}
+
+.clb-callout-area.foreground-text-light,
+.clb-callout-area.foreground-text-light a {
+    color: #fff;
+}
+
+.clb-callout-area.foreground-text-dark,
+.clb-callout-area.foreground-text-dark a {
+    color: #222;
+}
+
+@media only screen and (max-width: 769px) {
+    .clb-callout-area.left,
+    .clb-callout-area.right {
+        width: 100%;
+        margin-bottom: 26px;
+    }
+}
+
+/* =========================================
+   EDITOR / STATIC PREVIEW STYLES
+   (blocks.editor.build.css equivalents)
+   ========================================= */
+
+/* Icon card – editor placeholder */
+
+.clb-icon-card-static {
+    text-align: center;
+    background: #0066cc;
+    color: #fff;
+    padding: 16px;
+}
+
+.wp-block-cgb-icon-card-grid {
+    padding: 30px;
+    text-align: left;
+    background: #eee;
+}
+
+/* Button grid – editor placeholder */
+
+.clb-button-static {
+    text-align: center;
+    background: #0066cc;
+    color: #fff;
+    padding: 16px;
+}
+
+.wp-block-cgb-button-grid {
+    padding: 30px;
+    text-align: left;
+    background: #eee;
+}
+
+/* Interactive cardset – editor placeholder */
+
+.clb-card-static {
+    text-align: center;
+    padding-bottom: 12px;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+
+img.card-static-image {
+    -webkit-filter: grayscale(75%);
+    filter: grayscale(75%);
+    -webkit-filter: opacity(50%);
+    filter: opacity(50%);
+}
+
+.wp-block-cgb-interactive-cardset {
+    padding: 30px;
+    text-align: left;
+    background: #eee;
+}
+
+/* Modal – editor placeholder */
+
+.static-modal-window {
+    padding: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0.3rem;
+    -webkit-box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.static-modal-window .button-text {
+    font-size: 12px;
+    color: #777;
+}
+
+.static-modal-window h4 {
+    font-size: 16px;
+    margin-bottom: 0 !important;
+}
+
+.static-modal-window .modal-inner-block-area {
+    margin-top: 20px;
+    border-top: 1px solid #aaa;
+}
+
+.static-modal-window .clb-close-button {
+    float: right;
+    color: red;
+    opacity: 0.3;
+}
+
+.wp-block-clb-custom-blocks-modal-card {
+    padding: 12px;
+    background: #eee;
+}
+
+/* Collapse – editor placeholder */
+
+.collapse-static .title-area {
+    text-align: center;
+    padding: 8px;
+    background: #333333;
+    color: #fff;
+}
+
+.collapse-static .inner-block-content {
+    background: #f5f5f5;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+.collapse-static .dashicons {
+    margin-top: 6px;
+    float: right;
+    margin-right: 6px;
+}
+
+.wp-block-clb-custom-blocks-collapse-selected .collapse-title-input {
+    margin-bottom: 20px;
+}
+
+/* Callout – editor placeholder */
+
+.callout-static h3 {
+    padding: 30px;
+    margin-bottom: 0;
+}
